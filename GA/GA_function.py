@@ -199,6 +199,7 @@ def drawGantt(timelist):
     ax.set_yticklabels([f'机器{i + 1}' for i in range(len(T))])
 
     legend_handles = []
+    color_map = dict(sorted(color_map.items(), key=lambda item: item[0]))
     for job_idx, color in color_map.items():
         legend_handles.append(plt.Rectangle((0, 0), 1, 1, color=color, label=f'job{job_idx + 1}'))
     plt.legend(handles=legend_handles, title='工件', bbox_to_anchor=(1.0, 1.0))
