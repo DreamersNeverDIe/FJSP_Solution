@@ -216,10 +216,11 @@ def plot_gantt_chart(topo_jobs, process2machine, times):
 
     plt.title('FJSP_Solution_ACO')
 
+    color_map = dict(sorted(color_map.items(), key=lambda item: item[0]))
     legend_handles = []
     for job_idx, color in color_map.items():
         legend_handles.append(plt.Rectangle((0, 0), 1, 1, color=color, label=f'job{job_idx + 1}'))
     plt.legend(handles=legend_handles, title='工件', bbox_to_anchor=(1.0, 1.0))
 
-    plt.savefig('Mk01.png')
+    # plt.savefig('Mk01.png')
     plt.show()
